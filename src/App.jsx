@@ -51,7 +51,8 @@ export default class App extends Component {
 
   componentDidMount() {
     const today = new Date().toLocaleDateString('en-CA')
-    fetch('https://liturgy.day/api/rosary-days/' + today, {
+    console.info('screen', screen.width, screen.height, window.devicePixelRatio, getDefaultQuality())
+    fetch(`https://liturgy.day/api/rosary-days/${today}`, {
       method: 'GET',
       headers: { Accept: 'application/json' }
     })
